@@ -11,7 +11,7 @@ import BIP from './components/BIP'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/dps">
       <ScrollToTop />
       <Navigation />
       <main>
