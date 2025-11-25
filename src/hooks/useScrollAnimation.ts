@@ -15,11 +15,19 @@ export function useScrollAnimation(threshold = 0.1) {
       { threshold }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
+    // Delay observer to allow CSS opacity:0 to apply first
+    const timer = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (ref.current) {
+          observer.observe(ref.current)
+        }
+      })
+    })
 
-    return () => observer.disconnect()
+    return () => {
+      cancelAnimationFrame(timer)
+      observer.disconnect()
+    }
   }, [threshold])
 
   return { ref, isVisible }

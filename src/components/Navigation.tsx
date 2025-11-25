@@ -8,7 +8,6 @@ export default function Navigation() {
   const location = useLocation()
 
   const links = [
-    { href: '/#home', label: 'Strona główna' },
     { href: '/#about', label: 'O nas' },
     { href: '/#services', label: 'Usługi' },
     { href: '/#gallery', label: 'Galeria' },
