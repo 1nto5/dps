@@ -77,6 +77,7 @@ export default function Navigation() {
                     <Link
                       key={link.label}
                       to={link.href}
+                      onClick={() => setMoreOpen(false)}
                       className="block px-4 py-2 text-[15px] text-gray-600 hover:bg-sage-50 hover:text-sage-600 transition-colors"
                     >
                       {link.label}
