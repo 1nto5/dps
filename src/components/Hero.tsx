@@ -4,7 +4,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center scale-105 blur-[2px]"
         style={{
-          backgroundImage: 'url(https://dpsszczytno.pl/wp-content/uploads/2022/12/sg21.jpg)',
+          backgroundImage: 'url(https://dpsszczytno.pl/wp-content/uploads/2022/12/1-1.jpg)',
         }}
       >
       </div>
