@@ -11,14 +11,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-sage-900/80 via-sage-800/60 to-warm-50"></div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-[80px]">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 className="hero-animate hero-animate-delay-1 text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
           Dom Pomocy Społecznej
           <span className="block text-warm-300">im. Jana Pawła II</span>
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="hero-animate hero-animate-delay-2 text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
           Zapewniamy całodobową opiekę dla osób przewlekle psychicznie chorych, dbając o godne warunki życia z poszanowaniem prawa do wolności, intymności i bezpieczeństwa.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="hero-animate hero-animate-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact"
             className="px-8 py-4 bg-white hover:bg-warm-100 text-sage-700 font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"

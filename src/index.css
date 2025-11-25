@@ -167,3 +167,24 @@ html.high-contrast img {
 .animate-delay-200 { transition-delay: 0.2s; }
 .animate-delay-300 { transition-delay: 0.3s; }
 .animate-delay-400 { transition-delay: 0.4s; }
+
+/* Hero load animations */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: hero-fade-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-animate-delay-1 { animation-delay: 0.1s; }
+.hero-animate-delay-2 { animation-delay: 0.3s; }
+.hero-animate-delay-3 { animation-delay: 0.5s; }
