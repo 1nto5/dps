@@ -1,3 +1,5 @@
+import AnimatedSection from './AnimatedSection'
+
 export default function Services() {
   const services = [
     {
@@ -59,7 +61,7 @@ export default function Services() {
   return (
     <section id="services" className="py-24 bg-warm-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <span className="text-sage-500 font-semibold uppercase tracking-wider text-sm">Nasze usługi</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-3 mb-6">
             Kompleksowa opieka i wsparcie
@@ -68,20 +70,19 @@ export default function Services() {
             Zapewniamy kompleksową opiekę dla osób przewlekle psychicznie chorych,
             dbając o godne warunki życia i poszanowanie indywidualności każdego mieszkańca.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all group"
-            >
-              <div className="w-20 h-20 bg-sage-50 group-hover:bg-sage-100 rounded-2xl flex items-center justify-center text-sage-600 mb-6 transition-colors">
-                {service.icon}
+            <AnimatedSection key={index} delay={((index % 3) + 1) * 100 as 100 | 200 | 300}>
+              <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all group h-full">
+                <div className="w-20 h-20 bg-sage-50 group-hover:bg-sage-100 rounded-2xl flex items-center justify-center text-sage-600 mb-6 transition-colors">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

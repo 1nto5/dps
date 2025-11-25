@@ -1,3 +1,5 @@
+import AnimatedSection from './AnimatedSection'
+
 export default function About() {
   const values = [
     {
@@ -42,7 +44,7 @@ export default function About() {
     <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <AnimatedSection direction="left">
             <span className="text-sage-500 font-semibold uppercase tracking-wider text-sm">O nas</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-3 mb-6">
               Dom Pomocy Społecznej im. Jana Pawła II
@@ -71,35 +73,36 @@ export default function About() {
                 <p className="text-gray-500 text-sm">lokalizacje</p>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="relative">
-            <div className="rounded-2xl shadow-xl w-full h-[500px] overflow-hidden">
-              <img
-                src="https://dpsszczytno.pl/wp-content/uploads/2022/12/human-g38c32091f_1920.jpg"
-                alt="Dom Pomocy Społecznej im. Jana Pawła II"
-                className="w-full h-full object-cover scale-105 blur-[1px]"
-              />
+          <AnimatedSection direction="right">
+            <div className="relative">
+              <div className="rounded-2xl shadow-xl w-full h-[500px] overflow-hidden">
+                <img
+                  src="https://dpsszczytno.pl/wp-content/uploads/2022/12/human-g38c32091f_1920.jpg"
+                  alt="Dom Pomocy Społecznej im. Jana Pawła II"
+                  className="w-full h-full object-cover scale-105 blur-[1px]"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-sage-500 text-white p-6 rounded-2xl shadow-lg">
+                <p className="text-3xl font-bold">24/7</p>
+                <p className="text-sage-100">Opieka całodobowa</p>
+              </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-sage-500 text-white p-6 rounded-2xl shadow-lg">
-              <p className="text-3xl font-bold">24/7</p>
-              <p className="text-sage-100">Opieka całodobowa</p>
-            </div>
-          </div>
+          </AnimatedSection>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24">
           {values.map((value, index) => (
-            <div
-              key={index}
-              className="bg-warm-50 p-8 rounded-2xl hover:shadow-lg transition-shadow"
-            >
-              <div className="w-16 h-16 bg-sage-100 rounded-xl flex items-center justify-center text-sage-600 mb-5">
-                {value.icon}
+            <AnimatedSection key={index} delay={(index + 1) * 100 as 100 | 200 | 300 | 400}>
+              <div className="bg-warm-50 p-8 rounded-2xl hover:shadow-lg transition-shadow h-full">
+                <div className="w-16 h-16 bg-sage-100 rounded-xl flex items-center justify-center text-sage-600 mb-5">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>
